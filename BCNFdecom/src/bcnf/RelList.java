@@ -31,14 +31,18 @@ public class RelList {
 	}
 	
 	public Relation getFirst() {
-		this.iterator = this.lrs.iterator();
-		if(this.iterator.hasNext()) return this.iterator.next();
-		else return null;
+		return lrs.size() == 0 ? null : lrs.get(0);
 	} 
 	
 	public Relation getNext() {
-		if(null == this.iterator) this.iterator = lrs.iterator();
-		if(this.iterator.hasNext()) return iterator.next();
-		else return null;
+		 return iterator.next();
+		
+	}
+	
+	public void resetIterator() {
+		this.iterator = lrs.iterator();
+	}
+	public List<Relation> getLrs() {
+		return lrs;
 	}
 }

@@ -12,8 +12,11 @@ public class Fd {
 	}
 	
 	public boolean BCNFviolation(Relation s) {
-//		todo
-		return false;
+		boolean res = !s.subset(this.in_lhs.union(this.in_rhs)) &&
+				in_lhs.subset(s) &&
+				!s.intersect(this.in_rhs).isEmpty();
+//		if(res) System.out.println(this.toString() + " is violation over " + s.toString());
+		return res;
 	}
 
 	public Relation getLHS() {
