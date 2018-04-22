@@ -4,20 +4,13 @@ import java.io.IOException;
 
 public class test {
 	public static void main(String args[]) throws IOException, CloneNotSupportedException {
-//		Relation r = new Relation("ABS");
-//		Relation r1 = new Relation("A");
-//		System.out.println(r.subset(r1));
-//		System.out.println(r1.subset(r));
-//
-//		r.computePowerSet();
-//		r.printPowerSet();
+		Prob prob;
+		if(args.length == 0) prob = new Prob("input2");
+		else prob = new Prob(args[0]);
 		
-		Prob.p1ans();
-		Prob.p2ans();
-		Prob.p3ans();
-		
-		
-//		Fd fd = new Fd(new Relation(''));
+		prob.p1ans();
+		prob.p2ans();
+		prob.p3ans();
 		
 	}
 }

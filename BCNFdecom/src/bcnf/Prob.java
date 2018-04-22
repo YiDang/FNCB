@@ -18,9 +18,13 @@ public class Prob {
 	private static HashSet<String> relationSet;
 	private static RelList rl;
 	
-	private static final String path = "src\\bcnf\\input1";
+	private String path = "src\\bcnf\\input1";
 	
-	public static void p1ans() throws IOException, CloneNotSupportedException {
+	public Prob(String path) {
+		this.path = path;
+	}
+	
+	public void p1ans() throws IOException, CloneNotSupportedException {
 		System.out.println("Part 1");
 		readFile();
 		
@@ -43,8 +47,8 @@ public class Prob {
 		fClosure = res;
 	}
 
-	private static void readFile() throws IOException {
-		File file = new File(path);
+	private  void readFile() throws IOException {
+		File file = new File(this.path);
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		String st;
 		st = br.readLine();
@@ -57,7 +61,7 @@ public class Prob {
 		}
 	}
 	
-	public static void p2ans() throws IOException, CloneNotSupportedException {
+	public void p2ans() throws IOException, CloneNotSupportedException {
 		System.out.println("\nPart 2");
 		FdList res2 = new FdList();
 
@@ -75,7 +79,7 @@ public class Prob {
 		bcViolations = res2;
 	}
 	
-	public static void p3ans() throws CloneNotSupportedException {
+	public void p3ans() throws CloneNotSupportedException {
 		System.out.println("\nPart 3");
 		rl = new RelList();
 		relationSet = new HashSet<>();
@@ -114,7 +118,7 @@ public class Prob {
 		}
 	}
 	
-	private static void recursiveDecomposition(Relation curRelation) throws CloneNotSupportedException {
+	private void recursiveDecomposition(Relation curRelation) throws CloneNotSupportedException {
 		FdList curfClosure = new FdList(fClosure);
 		curfClosure.resetIterator();
 		boolean flag = true;
