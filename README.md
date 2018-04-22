@@ -1,3 +1,5 @@
+# GitHub
+https://github.com/YiDang/FNCB.git
 # FNCB
 The followings are included:  
 1.A eclipse java project.  
